@@ -1,19 +1,6 @@
  MedicApp
 =====
 
-DAM Project Fase 1
+Medications to take lists app. Just add the medications and dosis and we will remind when to take it!
 
-### Welcome! let me try to explain a little. 
-
-this project is focused on movile use, thats why most of it will be made to look good on a cellphone display
-
-
-
-
-
-
-> ## conditions:
-
->  1. Clone the git project, or download it, however you want 
-
->  2. have fun! XD
+This is a mobile first app on development as an university project requirement.
