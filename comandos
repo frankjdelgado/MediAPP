@@ -1,0 +1,13 @@
+comandos
+
+ rails g model User_medication value:string user_id:integer medication_id:integer type_id:integer unit_id:integer user:references medication:references unit:references medication_type:references
+
+ rails g model Password_reminder token:string user_id:integer user:references
+
+rails g model Medication_type value:string
+
+rails g model Medication name:string description:text
+
+rails g model Unit value:string
+
+rails g model User name:string email:string password:string 
