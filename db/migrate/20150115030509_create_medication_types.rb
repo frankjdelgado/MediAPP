@@ -5,5 +5,6 @@ class CreateMedicationTypes < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :medication_types, :value, unique: true
   end
 end
