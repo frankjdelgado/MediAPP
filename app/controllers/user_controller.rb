@@ -1,5 +1,7 @@
 class UserController < ApplicationController
 
+	before_action :detect_mobile
+	
 	def new
 
 		@user = User.new

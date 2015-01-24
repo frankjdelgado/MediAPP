@@ -8,8 +8,9 @@ class ApplicationController < ActionController::Base
   # --------Filters--------
 
   # device OS detection. Class Variables will be used on views to define which CSS one should render
-	def detect_mobile
-		when /Mobile/
+  def detect_mobile
+    case request.user_agent
+    when /Mobile/
       case request.user_agent
       when /iPhone/
         @iphone = true
@@ -18,6 +19,9 @@ class ApplicationController < ActionController::Base
       when /Windows Phone/
         @windows = true
       end
+    end
+    unless @iphone || @android || @windows
+      @android = true
+    end
   end
-
 end

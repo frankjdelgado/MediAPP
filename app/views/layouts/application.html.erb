@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DAMF1</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+	<meta charset="utf-8">
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="msapplication-tap-highlight" content="no">
+
+  <title><%= @title rescue 'MediApp'%></title>
+
+  <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%if @windows %>
+  <link data-turbolinks-track="true" href="/assets/chui-win-3.8.1.min.css?body=1" media="all" rel="stylesheet" />
+  <%end%>
+  <%if @android %>
+  <link data-turbolinks-track="true" href="/assets/chui-android-3.8.1.min.css?body=1" media="all" rel="stylesheet" />
+  <%end%>
+  <%if @iphone %>
+	<link data-turbolinks-track="true" href="/assets/chui-ios-3.8.1.min.css?body=1" media="all" rel="stylesheet" />
+  <%end%>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <%= yield %>
 
 </body>
