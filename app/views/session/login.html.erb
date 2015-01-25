@@ -1,0 +1,17 @@
+<nav class="current">
+	<h1 class="buttonOnRight">Welcome!</h1>
+ 	<a class='button align-flush'>Sign Up</a>
+ </nav>
+<article id="sign-in" class="current">
+	<section>
+		<h1 class="text-center text-green">Medi<strong class="text-black">App</strong><span class="icon-medical10"></span></h1>
+		<%= form_for :session, url: {action: "create"}, html: { class: "text-center"} do |f| %>
+			<%= f.email_field :email , placeholder:"Email Address"%>
+			<%= f.password_field :password, placeholder:"Password" %>
+			<%= f.submit "sign in", class:"btn btn-green"%>
+			<br/>
+			<br/>
+			<a href="" class="btn text-green btn-block">Recover Account</a>
+		<% end %>
+	</section>
+</article>

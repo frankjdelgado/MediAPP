@@ -8,19 +8,11 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="msapplication-tap-highlight" content="no">
 
-  <title><%= @title rescue 'MediApp'%></title>
-
+  <title>MediApp - <%= @title%></title>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%if @windows %>
-  <%= stylesheet_link_tag 'chui-win-3.8.1.min', media: 'all', 'data-turbolinks-track' => true %>
-  <%end%>
-  <%if @android %>
-  <%= stylesheet_link_tag 'chui-android-3.8.1.min', media: 'all', 'data-turbolinks-track' => true %>
-  <%end%>
-  <%if @iphone %>
   <%= stylesheet_link_tag 'chui-ios-3.8.1.min', media: 'all', 'data-turbolinks-track' => true %>
-  <%end%>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
