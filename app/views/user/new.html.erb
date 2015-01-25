@@ -3,11 +3,18 @@
 </nav>
 <article id="sign-up" class="current">
 	<section>
-		<%= form_for :user do |f| %>
-			<%= f.email_field :email , placeholder:"email"%><br/>
-			<%= f.password_field :password, placeholder:"password" %><br/>
-			<%= f.password_field :password_confirmation, placeholder: "password confirmation" %><br/>
-			<button type="submit">submit</button>
+		<h1 class="text-center text-green">Medi<strong class="text-black">App</strong><span class="icon-medical10"></span></h1>
+		<%= form_for :user, url: {action: "create"}, html: { class: "text-center"} do |f| %>
+			<%= f.email_field :email , placeholder:"Email Address"%><br/>
+			<%= f.password_field :password, placeholder:"Password" %><br/>
+			<%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %><br/>
+			<%= f.submit "create account", class:"btn btn-green"%>
 		<% end %>
+		<br/>
+		<br/>
+		<div class="text-center">
+			<a class='btn text-green btn-block' href="<%=root_path%>">Sign In</a>
+			<a href="<%=root_path%>" class="btn text-green btn-block">Recover Account</a>
+		</div>
 	</section>
 </article>
