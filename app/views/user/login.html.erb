@@ -1,12 +1,11 @@
 <nav class="current">
-	<h1>Sign up</h1>
+	<h1>Sign in</h1>
 </nav>
-<article id="sign-up" class="current">
+<article id="sign-inp" class="current">
 	<section>
 		<%= form_for :user do |f| %>
 			<%= f.email_field :email , placeholder:"email"%><br/>
 			<%= f.password_field :password, placeholder:"password" %><br/>
-			<%= f.password_field :password_confirmation, placeholder: "password confirmation" %><br/>
 			<button type="submit">submit</button>
 		<% end %>
 	</section>
