@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'signup', to: 'session#create'
 
   resources :user
+  resources :medication
 
   get 'test', to: 'user#test'
 end
