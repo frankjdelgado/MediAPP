@@ -22,6 +22,10 @@ class UserController < ApplicationController
 	end
 
 
+	def test
+		
+	end
+
 	private
 
 	def user_params

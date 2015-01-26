@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :user
   resources :medication
+
+  get 'test', to: 'user#test'
 end
