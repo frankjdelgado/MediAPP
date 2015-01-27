@@ -1,6 +1,6 @@
 <nav class="current">
 	<h1>Home</h1>
-	<button class='button align-flush' id='addButton'><span class="icon-plus"></span></button>
+	<button class='button align-flush' id='addButton'><span class="text-green icon-plus"></span></button>
 </nav>
  <article id="meds" class="current">
 	<section>
@@ -29,10 +29,10 @@
 
 
 <nav class="next">
-	<a class='button back'>Cancel</a>
+	<a class='button back text-green'>Cancel</a>
 	<h1>Add Treatment</h1>
 </nav>
-<article id="pewpew" class="next">
+<article id="addTreatment" class="next">
 	<section>
 		<%= form_for :medication, url: {action: "create"}, html: { class: "text-center"} do |f| %>
 			<%= f.collection_select(:medication_id, Medication.all, :id, :name,:prompt => "Select a medication") %>	
