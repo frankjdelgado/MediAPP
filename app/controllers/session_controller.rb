@@ -16,8 +16,8 @@ class SessionController < ApplicationController
 	    if user && user.authenticate(params[:password])
 	    	# Change user_id for entire user object?
 	    	# save more user info like email?
-	      	session[:user_id] = user.id
-			# redirect_to controller: :nombre_controller, action: :nombre_action
+	      	session[:user] = user
+			redirect_to controller: :medication, action: :index
 	    else
 	    	redirect_to :login
 	    end

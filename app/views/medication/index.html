@@ -5,24 +5,17 @@
  <article id="meds" class="current">
 	<section>
 		<ul class='list' id="med-list">
-	    <li class='comp'>
-	        <div>
-	            <h3>People</h3>
-	            <p>Your Friends</p>
-	        </div>
-	        <aside>
-	            <span class='nav'></span>
-	        </aside>
-	    </li>
-	    <li class='comp'>
-	        <div>
-	            <h3>Places</h3>
-	            <p>Interesting Destinations</p>
-	        </div>
-	        <aside>
-	            <span class='nav'></span>
-	        </aside>
-	    </li>
+			<% @treatments.each do |treatment| %>
+		    <li class='comp'>
+		        <div>
+		            <h3><%= treatment.medication.name %></h3>
+		            <p><%= treatment.updated %></p>
+		        </div>
+		        <aside>
+		            <span class='nav'></span>
+		        </aside>
+		    </li>
+		    <%end%>
 		</ul>
 	</section>
 </article>
