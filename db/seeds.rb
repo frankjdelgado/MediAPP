@@ -50,11 +50,15 @@ end
 	 	start: DateTime.now.to_date ,
 		finish: DateTime.now.midnight, 
 	  hour: 10.minutes.ago,
-	  #frecuency: i,  #should exist?
+	  #frecuency: 1,  #should exist?
 	  frecuency_id: Frequency.last.id,
 	  user_id: User.first.id,
 	  medication_id: Medication.first.id,
+	  unit_id: Unit.first.id,
 	  medication_type_id: MedicationType.last.id
 	 )
  end
 
+	# Treatment.create( 	start: DateTime.now.to_date ,		finish: DateTime.now.midnight, 	  hour: 10.minutes.ago,	  frecuency_id: Frequency.last.id,	  user_id: User.first.id,	  medication_id: Medication.first.id,	  unit_id: Unit.first.id,	  medication_type_id: MedicationType.last.id	 )
+
+	   #frecuency: 1,  #should exist?	
