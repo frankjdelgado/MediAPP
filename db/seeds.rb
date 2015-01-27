@@ -22,41 +22,41 @@ Treatment.delete_all
 PasswordReminder.delete_all
 
 10.times do |i|
-Frequency.create(value: " #{i} Veces al dia")
+	Frequency.create(value: " #{i} Veces al dia")
 end
 
 9.times do |i|
-MedicationType.create(value: "Veneno/formula N##{i}")
+	MedicationType.create(value: "Veneno/formula N##{i}")
 end
 
 9.times do |i|
-Medication.create(
-	:name => "Sustancia X#{i}" ,
-	:description => "con esta sustancia puedes hacer #{i+3} chicas superpoderosas",
-)
+	Medication.create(
+					:name => "Sustancia X#{i}" ,
+					:description => "con esta sustancia puedes hacer #{i+3} chicas superpoderosas",
+				)
 end
 
 9.times do |i|
-Unit.create(value: " #{i} capsulas")
+	Unit.create(value: " #{i} capsulas")
 end
 
 9.times do |i|
-User.create(name: "usuario #{i}" , email: "correo#{i}@gmail.com", password: "123456")
+	User.create(name: "usuario #{i}" , email: "correo#{i}@gmail.com", password: "123456")
 end
 
 	
- 9.times do |i|
-	 Treatment.create(
-	 	start: DateTime.now.to_date ,
-		finish: DateTime.now.midnight, 
-	  hour: 10.minutes.ago,
-	  #frecuency: 1,  #should exist?
-	  frecuency_id: Frequency.last.id,
-	  user_id: User.first.id,
-	  medication_id: Medication.first.id,
-	  unit_id: Unit.first.id,
-	  medication_type_id: MedicationType.last.id
-	 )
+9.times do |i|
+	Treatment.create(
+					start: DateTime.now.to_date ,
+					finish: DateTime.now.midnight, 
+					hour: 10.minutes.ago,
+					frequency: 1,
+					frequency_id: Frequency.last.id,
+					user_id: User.first.id,
+					medication_id: Medication.first.id,
+					unit_id: Unit.first.id,
+					medication_type_id: MedicationType.last.id
+				)
  end
 
 	# Treatment.create( 	start: DateTime.now.to_date ,		finish: DateTime.now.midnight, 	  hour: 10.minutes.ago,	  frecuency_id: Frequency.last.id,	  user_id: User.first.id,	  medication_id: Medication.first.id,	  unit_id: Unit.first.id,	  medication_type_id: MedicationType.last.id	 )

@@ -4,8 +4,8 @@ class CreateTreatments < ActiveRecord::Migration
 	  t.date :start
       t.date :finish
       t.time :hour
-      t.integer :frecuency
-      t.references :frecuency, index: true
+      t.integer :frequency
+      t.references :frequency, index: true
       t.references :user, index: true
       t.references :medication, index: true
       t.references :unit, index: true

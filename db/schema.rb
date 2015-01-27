@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20150120020912) do
     t.date     "start"
     t.date     "finish"
     t.time     "hour"
-    t.integer  "frecuency"
-    t.integer  "frecuency_id"
+    t.integer  "frequency"
+    t.integer  "frequency_id"
     t.integer  "user_id"
     t.integer  "medication_id"
     t.integer  "unit_id"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150120020912) do
     t.datetime "updated_at"
   end
 
-  add_index "treatments", ["frecuency_id"], name: "index_treatments_on_frecuency_id"
+  add_index "treatments", ["frequency_id"], name: "index_treatments_on_frequency_id"
   add_index "treatments", ["medication_id"], name: "index_treatments_on_medication_id"
   add_index "treatments", ["medication_type_id"], name: "index_treatments_on_medication_type_id"
   add_index "treatments", ["unit_id"], name: "index_treatments_on_unit_id"
