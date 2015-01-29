@@ -1,11 +1,11 @@
 class MedicationController < ApplicationController
 
-	before_action :detect_mobile, :validate_user
-
+	before_action :detect_mobile
+# , :validate_user
   # GET /medications
   # GET /medications.json
   def index
-    @medications = current_user.treatments rescue nil
+    @treatments = Treatment.all rescue nil
   end
 
   # GET /medications/1
@@ -72,6 +72,13 @@ class MedicationController < ApplicationController
     end
   end
 
+  def autocomplete
+    respond_to do |format|
+      meds = Medication.search(params[:q])
+      format.json { render status: :ok, json: meds.to_json }
+    end
+  end
+
 	private
     # Use callbacks to share common setup or constraints between actions.
 		def set_medication
@@ -81,6 +88,5 @@ class MedicationController < ApplicationController
 		def medication_params
 			params.require(:medication).permit(:name, :description)
 		end
-
 
 end

@@ -2,14 +2,15 @@
 	<h1>Home</h1>
 	<button class='button align-flush' id='addButton'><span class="text-green icon-plus"></span></button>
 </nav>
- <article id="meds" class="current">
+ <article id="medication" class="current">
 	<section>
 		<ul class='list' id="med-list">
+			<!-- <a href="/signout">logout</a> -->
 			<% @treatments.each do |treatment| %>
 		    <li class='comp'>
 		        <div>
-		            <h3><%= treatment.medication.name %></h3>
-		            <p><%= treatment.updated %></p>
+		            <h3 class="text-black"><strong><%= treatment.medication.name %></strong></h3>
+		            <p class="text-grey"><%= treatment.updated_at.strftime('%I:%m %p') %></p>
 		        </div>
 		        <aside>
 		            <span class='nav'></span>
@@ -20,23 +21,32 @@
 	</section>
 </article>
 
-
 <nav class="next">
 	<a class='button back text-green'>Cancel</a>
 	<h1>Add Treatment</h1>
 </nav>
 <article id="addTreatment" class="next">
 	<section>
-		<%= form_for :medication, url: {action: "create"}, html: { class: "text-center"} do |f| %>
-			<%= f.collection_select(:medication_id, Medication.all, :id, :name,:prompt => "Select a medication") %>	
+		<%= form_for :medication, url: {action: "create"}, html: { class: "ui-filterable text-center"} do |f| %>
+
+			<!-- <input id="autocomplete-input" data-type="search" placeholder="Find a medication">
+			<ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-input="#autocomplete-input"></ul>
+			<%= f.hidden_field :id%> -->
+
 			<ul class="list-inline">
-				<li class="col-half padding-right">
-					<%= f.number_field :frequency, placeholder:"Frequency"%>	
+				<li class="col-half">
+					<div class="padding-right">
+						<%= f.number_field :frequency, min: 1,placeholder:"Frequency"%>	
+					</div>
 				</li>
-				<li clas="col-half padding-left">
-					<%= f.collection_select(:frequency_id, Frequency.all, :id, :name,:prompt => "Select a frecuency") %>	
+				<li class="col-half">
+					<div class="padding-left">
+						<%= f.collection_select(:frequency_id, Frequency.all, :id, :value,:prompt => "Select a frecuency") %>
+					</div>	
 				</li>
+				<div class="clearfix"></div>
 			</ul>
+			
 			<span class='date-time'>Start Date</span>
 			<%= f.date_field :start%>
 			<span class='date-time'>Finish Date</span>

@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery-2.1.3.min
+//= require jquery.mobile-1.4.5.min
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

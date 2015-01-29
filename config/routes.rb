@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   post 'signup', to: 'session#create'
 
   resources :user
-  resources :medication
+  
+  resources :medication do
+		collection do
+			get 'autocomplete'
+		end 
+	end
 
-  get 'test', to: 'user#test'
 end

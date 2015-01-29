@@ -5,7 +5,8 @@ class SessionController < ApplicationController
 	end
 
 	def logout
-		# flush session
+		session.delete[:user_id]
+    	redirect_to '/'
 	end
 
 	# POST. Create new session
@@ -16,7 +17,7 @@ class SessionController < ApplicationController
 	    if user && user.authenticate(params[:password])
 	    	# Change user_id for entire user object?
 	    	# save more user info like email?
-	      	session[:user] = user
+	      	session[:user_id] = user.id
 			redirect_to controller: :medication, action: :index
 	    else
 	    	redirect_to :login
