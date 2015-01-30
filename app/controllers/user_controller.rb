@@ -12,6 +12,7 @@ class UserController < ApplicationController
 		user = User.new(user_params)
 
 		if user.save
+			 medimailer.send_signup_email(@user).deliver
 			# flash[:notice] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, vitae?"
 			# redirect_to controller: :nombre_controller, action: :nombre_action
 		else

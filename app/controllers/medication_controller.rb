@@ -33,6 +33,7 @@ class MedicationController < ApplicationController
 
     respond_to do |format|
       if @medication.save
+        # medimailer.pill_time_email(@medication).deliver
         format.html { redirect_to @medication, notice: 'Medication was successfully created.' }
         format.json { render :show, status: :created, location: @medication }
 				# redirect_to controller: :nombre_controller, action: :nombre_action
