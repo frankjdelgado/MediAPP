@@ -29,9 +29,9 @@
 	<section>
 		<%= form_for :medication, url: {action: "create"}, html: { class: "ui-filterable text-center"} do |f| %>
 
-			<!-- <input id="autocomplete-input" data-type="search" placeholder="Find a medication">
+			<input autocomplete="off" id="autocomplete-input" data-type="search" placeholder="Find a medication">
 			<ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-input="#autocomplete-input"></ul>
-			<%= f.hidden_field :id%> -->
+			<%= f.hidden_field :id%>
 
 			<ul class="list-inline">
 				<li class="col-half">
