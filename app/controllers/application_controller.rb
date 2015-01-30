@@ -6,20 +6,13 @@ class ApplicationController < ActionController::Base
 
   # Get session user
   def current_user
-    if session[:user]
-      return session[:user]
-    else
-      return false
-    end
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+  helper_method :current_user
 
   # Validate user is auth
   def validate_user
-    if current_user
-      return true
-    else
-      redirect_to controller: :session, action: :login
-    end
+    redirect_to '/' unless current_user
   end
 
   protected
