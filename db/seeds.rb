@@ -19,26 +19,58 @@ Medication.delete_all
 Unit.delete_all
 User.delete_all
 Treatment.delete_all
-PasswordReminder.delete_all
 
-10.times do |i|
-	Frequency.create(value: " #{i} Veces al dia")
-end
+# 10.times do |i|
+# 	Frequency.create(value: " #{i} Veces al dia")
+# end
 
-9.times do |i|
-	MedicationType.create(value: "Veneno/formula N##{i}")
-end
+# Frequecy
+
+	Frequency.create(value: "Daily")
+	Frequency.create(value: "Weekly")
+	Frequency.create(value: "Monthly")
+	Frequency.create(value: "After Eating")
+	Frequency.create(value: "times a day")
+	Frequency.create(value: "Every X hours")
+
+
+# MEdication Type
+# guide: http://www.macmillandictionary.com/thesaurus-category/british/types-and-forms-of-medicine
+
+	MedicationType.create(value: "Liquid")
+	MedicationType.create(value: "Tablet")
+	MedicationType.create(value: "Capsules")
+	MedicationType.create(value: "Suppositories")
+	MedicationType.create(value: "Drops")
+	MedicationType.create(value: "Inhalers")
+	MedicationType.create(value: "Injections")
+	MedicationType.create(value: "Implants ")
+	MedicationType.create(value: "Patches")
+	MedicationType.create(value: "Pill")
+	MedicationType.create(value: "Vitamin")
+
+
 
 9.times do |i|
 	Medication.create(
-					:name => "Sustancia X#{i}" ,
-					:description => "con esta sustancia puedes hacer #{i+3} chicas superpoderosas",
+					:name => "Liquid X#{i}" ,
+					:description => "You can make #{i+3} powerpuff girls",
 				)
 end
 
-9.times do |i|
-	Unit.create(value: " #{i} capsulas")
-end
+# 9.times do |i|
+# 	Unit.create(value: " #{i} capsulas")
+# end
+
+# UNITS
+
+	Unit.create(value: "Unit")
+	Unit.create(value: "Grams")
+	Unit.create(value: "Half Unit")
+	Unit.create(value: "One and Half Unit")
+	Unit.create(value: "Miligrams")
+	Unit.create(value: "Teaspoon")
+	Unit.create(value: "Mililiters")
 
 9.times do |i|
 	User.create(name: "usuario #{i}" , email: "correo#{i}@gmail.com", password: "123456")
@@ -47,16 +79,16 @@ end
 	
 9.times do |i|
 	Treatment.create(
-					start: DateTime.now.to_date ,
-					finish: DateTime.now.midnight, 
-					hour: 10.minutes.ago,
-					frequency: 1,
-					frequency_id: Frequency.last.id,
-					user_id: User.first.id,
-					medication_id: Medication.first.id,
-					unit_id: Unit.first.id,
-					medication_type_id: MedicationType.last.id
-				)
+		start: DateTime.now.to_date ,
+		finish: DateTime.now.midnight, 
+		hour: 10.minutes.ago,
+		frequency: 1,
+		frequency_id: Frequency.last.id,
+		user_id: User.first.id,
+		medication_id: Medication.first.id,
+		unit_id: Unit.first.id,
+		medication_type_id: MedicationType.last.id
+	)
  end
 
 	# Treatment.create( 	start: DateTime.now.to_date ,		finish: DateTime.now.midnight, 	  hour: 10.minutes.ago,	  frecuency_id: Frequency.last.id,	  user_id: User.first.id,	  medication_id: Medication.first.id,	  unit_id: Unit.first.id,	  medication_type_id: MedicationType.last.id	 )
