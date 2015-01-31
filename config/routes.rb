@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Session
   root 'session#login'
-  get 'signout', to: 'session#destroy', as: :logout
+  get 'signout', to: 'session#logout', as: :logout
   post 'signup', to: 'session#create'
 
   resources :user
