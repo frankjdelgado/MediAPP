@@ -73,7 +73,7 @@ end
 	Unit.create(value: "Mililiters")
 
 9.times do |i|
-	User.create(name: "usuario #{i}" , email: "correo#{i}@gmail.com", password: "123456")
+	User.create(name: "User #{i}" , email: "mail#{i}@gmail.com", password: "123456")
 end
 
 	
