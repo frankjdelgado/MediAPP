@@ -13,4 +13,7 @@
  *= require_self
  *= require main
  *= require icomoon
+ *= require default
+ *= require default.date
+ *= require default.time
  */

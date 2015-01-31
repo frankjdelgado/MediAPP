@@ -36,7 +36,7 @@
 			<ul class="list-inline">
 				<li class="col-half">
 					<div class="padding-right">
-						<%= f.number_field :frequency, min: 1,placeholder:"Frequency"%>	
+						<%= f.select("frequency",1..10, {prompt: "Every..."}) %>
 					</div>
 				</li>
 				<li class="col-half">
@@ -47,12 +47,9 @@
 				<div class="clearfix"></div>
 			</ul>
 			
-			<span class='date-time'>Start Date</span>
-			<%= f.date_field :start%>
-			<span class='date-time'>Finish Date</span>
-			<%= f.date_field :finish%>
-			<span class='date-time'>Start Hour</span>
-			<%= f.time_field :hour%>
+			<%= f.text_field :start, class: "pickdate", placeholder: "Start date"%>
+			<%= f.text_field :finish, class: "pickdate", placeholder: "Finish date"%>
+			<%= f.text_field :hour, class: "picktime", placeholder: "Start hour"%>
 			<br/>
 			<br/>
 			<%= f.submit "Add Treatment", class:"btn btn-green"%>

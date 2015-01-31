@@ -61,4 +61,11 @@ $(function() {
         $("#autocomplete").empty();
     });
 
+    $('.pickdate').pickadate({
+        formatSubmit: 'yyyy-mm-dd'
+    });
+    $('.picktime').pickatime({
+        interval: 60
+    });
+
 });
