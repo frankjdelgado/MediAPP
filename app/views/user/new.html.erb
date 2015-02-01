@@ -6,6 +6,7 @@
 		<h1 class="text-center text-green">Medi<strong class="text-black">App</strong><span class="icon-medical10"></span></h1>
 		<%= form_for :user, url: {action: "create"}, html: { class: "text-center"} do |f| %>
 			<%= f.email_field :email , placeholder:"Email Address"%><br/>
+			<%= f.text_field :name , placeholder:"User Name"%><br/>
 			<%= f.password_field :password, placeholder:"Password" %><br/>
 			<%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %><br/>
 			<%= f.submit "create account", class:"btn btn-green"%>

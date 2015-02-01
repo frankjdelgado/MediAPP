@@ -6,7 +6,7 @@ class Medimailer < ActionMailer::Base
   	@treatment = treatment
 
   	#si no me equivoco, este puede ser un buen comienzo
-  	mail(to: @user.email, subject: " te toca tomarte #{(Medication.find_by_id(treatment.medication_id)).name}")
+  	mail(to: @user.email, subject: "Its time to take your medicine #{(Medication.find_by_id(treatment.medication_id)).name}")
 
   end
 
