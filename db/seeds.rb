@@ -81,7 +81,7 @@ end
 	Treatment.create(
 		start: DateTime.now.to_date ,
 		finish: DateTime.now.midnight, 
-		hour: 10.minutes.ago,
+		hour: 10.minutes.ago.strftime("%I:%m %p"),
 		frequency: 1,
 		frequency_id: Frequency.last.id,
 		user_id: User.first.id,
