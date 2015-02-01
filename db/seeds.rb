@@ -82,7 +82,7 @@ end
 					start: DateTime.now.to_date ,
 					finish: DateTime.now.midnight, 
 					hour: 10.minutes.ago.strftime("%I:%m %p"),
-					frequency: 1,
+					frequency_quantity: 1,
 					frequency_id: Frequency.last.id,
 					user_id: User.first.id,
 					medication_id: Medication.first.id,
