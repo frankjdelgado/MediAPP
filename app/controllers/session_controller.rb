@@ -1,5 +1,7 @@
 class SessionController < ApplicationController
 
+	before_action :validate_session
+
 	def login
 		# login view
 	end
