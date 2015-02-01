@@ -1,16 +1,15 @@
 <nav class="current">
 	<h1>Home</h1>
-	<button class='button align-flush' id='addButton'><span class="text-green icon-plus"></span></button>
+	<button class='button align-flush' id='addMedication'><span class="text-green icon-plus"></span></button>
 </nav>
  <article id="medication" class="current">
 	<section>
-		<ul class='list' id="med-list">
-			<a href="/signout">logout</a>
-			<% @treatments.each do |treatment| %>
-		    <li class='comp'>
+		<ul class='list' id="medication-list">
+			<% @medications.each do |med| %>
+		    <li class='comp text-center' data-id="<%= med.id %>">
 		        <div>
-		            <h3 class="text-black"><strong><%= treatment.medication.name %></strong></h3>
-		            <p class="text-grey"><%= treatment.updated_at.strftime('%I:%m %p') %></p>
+		            <h3 class="text-black"><strong><%= med.name %></strong></h3>
+		            <p class="text-grey"><%= med.description %></p>
 		        </div>
 		        <aside>
 		            <span class='nav'></span>
@@ -23,37 +22,18 @@
 
 <nav class="next">
 	<a class='button back text-green'>Cancel</a>
-	<h1>Add Treatment</h1>
+	<h1>Add Medication</h1>
 </nav>
-<article id="addTreatment" class="next">
+<article id="newMedication" class="next">
 	<section>
-		<%= form_for :treatment, url: {action: "create"}, html: { class: "ui-filterable text-center"} do |f| %>
+	<br>
+		<%= form_for :medication, url: {action: "create"}, html: { class: "ui-filterable text-center"} do |f| %>
 
-			<input autocomplete="off" id="autocomplete-input" data-type="search" placeholder="Find a medication">
-			<ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-input="#autocomplete-input"></ul>
-			<%= f.hidden_field :medication_id%>
-
-			<ul class="list-inline">
-				<li class="col-half">
-					<div class="padding-right">
-						<%= f.select(:frequency,1..10, {prompt: "Every..."}) %>
-					</div>
-				</li>
-				<li class="col-half">
-					<div class="padding-left">
-						<%= f.collection_select(:frequency_id, Frequency.all, :id, :value,:prompt => "Select a frecuency") %>
-					</div>	
-				</li>
-				<div class="clearfix"></div>
-			</ul>
-			
-			<%= f.text_field :start, class: "pickdate", placeholder: "Start date"%>
-			<%= f.text_field :finish, class: "pickdate", placeholder: "Finish date"%>
-			<%= f.text_field :hour, class: "picktime", placeholder: "Start hour"%>
-			<%= f.hidden_field :user_id, value: session[:user_id]%>
+			<%= f.text_field :name, placeholder: "Name" %>
+			<%= f.text_field :description, placeholder: "Description" %>
 			<br/>
 			<br/>
-			<%= f.submit "Add Treatment", class:"btn btn-green"%>
+			<%= f.submit "Add Medication", class:"btn btn-green"%>
 		<% end %>
 	</section>
 </article>

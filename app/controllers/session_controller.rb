@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
 
-	# before_action :validate_session, only: [:login]
+	before_action :validate_session, only: [:login]
 
 	def login
 		# login view
