@@ -57,13 +57,11 @@ $(function() {
 
     $(document).on( "singletap", "#autocomplete li", function() {
         $("#autocomplete-input").val($(this).text());
-        $("#medication_id").val($(this).data("id"));
+        $("#treatment_medication_id").val($(this).data("id"));
         $("#autocomplete").empty();
     });
 
-    $('.pickdate').pickadate({
-        formatSubmit: 'yyyy-mm-dd'
-    });
+    $('.pickdate').pickadate();
     $('.picktime').pickatime({
         interval: 60
     });

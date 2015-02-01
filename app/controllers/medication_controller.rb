@@ -1,11 +1,10 @@
 class MedicationController < ApplicationController
 
-	before_action :detect_mobile
-# , :validate_user
+	before_action :detect_mobile, :validate_user
   # GET /medications
   # GET /medications.json
   def index
-    @treatments = Treatment.all rescue nil
+    @treatments = current_user.treatments
   end
 
   # GET /medications/1

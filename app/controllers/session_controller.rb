@@ -16,7 +16,7 @@ class SessionController < ApplicationController
 	    # If the user exists AND the password entered is correct.
 	    if user && user.authenticate(params[:session][:password])
 	      	session[:user_id] = user.id
-			redirect_to controller: :medication, action: :index
+			redirect_to controller: :treatment, action: :index
 	    else
 	    	redirect_to :login
 	    end

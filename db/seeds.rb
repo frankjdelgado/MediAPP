@@ -49,7 +49,7 @@ end
 	Treatment.create(
 					start: DateTime.now.to_date ,
 					finish: DateTime.now.midnight, 
-					hour: 10.minutes.ago,
+					hour: 10.minutes.ago.strftime("%I:%m %p"),
 					frequency: 1,
 					frequency_id: Frequency.last.id,
 					user_id: User.first.id,
@@ -62,3 +62,5 @@ end
 	# Treatment.create( 	start: DateTime.now.to_date ,		finish: DateTime.now.midnight, 	  hour: 10.minutes.ago,	  frecuency_id: Frequency.last.id,	  user_id: User.first.id,	  medication_id: Medication.first.id,	  unit_id: Unit.first.id,	  medication_type_id: MedicationType.last.id	 )
 
 	   #frecuency: 1,  #should exist?	
+Time.now
+Treatment.create(start: DateTime.now.to_date ,finish: DateTime.now.midnight, hour: Time.now.strftime("%I:%m %p").to_s,frequency: 1,frequency_id: Frequency.last.id,user_id: User.first.id,medication_id: Medication.first.id,unit_id: Unit.first.id,medication_type_id: MedicationType.last.id)

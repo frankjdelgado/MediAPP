@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  # Validate user is auth
+  # Validate user session
   def validate_user
     redirect_to '/' unless current_user
   end

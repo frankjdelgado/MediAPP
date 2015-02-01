@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150120020912) do
+ActiveRecord::Schema.define(version: 20150201024119) do
 
   create_table "frequencies", force: true do |t|
     t.string   "value"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20150120020912) do
   create_table "treatments", force: true do |t|
     t.date     "start"
     t.date     "finish"
-    t.time     "hour"
-    t.integer  "frequency"
+    t.string   "hour"
+    t.integer  "frequency_quantity"
     t.integer  "frequency_id"
     t.integer  "user_id"
     t.integer  "medication_id"
