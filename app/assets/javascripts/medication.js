@@ -6,13 +6,8 @@ $(function() {
 
 
     $('#med-list').UIEditList({
-        editLabel : 'Edit',
-        doneLabel : 'Ok',
-        deleteLabel : 'Delete',
-        callback : function(){
-          alert("Se ha terminado");
+        callback : function(item){
         },
-        deletable: true,
         movable: false
     });
 

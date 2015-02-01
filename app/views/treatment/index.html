@@ -7,7 +7,7 @@
 		<ul class='list' id="med-list">
 			<a href="/signout">logout</a>
 			<% @treatments.each do |treatment| %>
-		    <li class='comp'>
+		    <li class='comp' data-id="<%= treatment.id%>">
 		        <div>
 		            <h3 class="text-black"><strong><%= treatment.medication.name %></strong></h3>
 		            <p class="text-grey"><%= treatment.updated_at.strftime('%I:%m %p') %></p>

@@ -1,5 +1,7 @@
 class TreatmentController < ApplicationController
 
+	before_action :validate_user
+
 	def index
   		@treatments = current_user.treatments
   	end
@@ -27,6 +29,12 @@ class TreatmentController < ApplicationController
 	end
 
 	def destroy
+
+		if Treatment.find(params[:id]).destroy
+			redirect_to controller: :treatment, action: :index
+		else
+			redirect_to controller: :treatment, action: :index
+		end
 		
 	end
 
