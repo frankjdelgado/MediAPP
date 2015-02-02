@@ -16,8 +16,12 @@ Rails.application.routes.draw do
 		end 
 	end
 	get 'medications', to: 'medication#medications', as: 'medications'
-	
-	resources :treatment
+
+	resources :treatment do
+		collection do
+			put 'last_taken'
+		end 
+	end
 
 	get 'recover', to: 'account#recover', as: 'recover'
 	post 'password_reset', to: 'account#password', as: 'password_reset'

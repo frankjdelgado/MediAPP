@@ -31,6 +31,16 @@ class TreatmentController < ApplicationController
 	    end
 	end
 
+	def last_taken
+		@treatment = Treatment.find(params[:id])
+		if @treatment.touch
+			redirect_to controller: :treatment, action: :index
+		else
+			redirect_to controller: :user, action: :edit
+		end
+
+	end
+
 	private
 
 	def treatment_params

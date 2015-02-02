@@ -9,8 +9,17 @@ $(document).on( "singletap", "#med-list .delete", function() {
 
 $(function() {
 	$('#addButton').on('singletap', function() {
-		console.log("adadasd");
         $.UIGoToArticle('#newTreatment');
+    });
+
+	$(document).on( "singletap", "#med-list .icon-checkmark", function() {
+    	var value = $(this).parent().parent().data("id");
+    	console.log(value);
+        $.ajax({
+            url: "http://localhost:3000/treatment/last_taken?id="+value,
+            type: "PUT"
+        })
+         $(this).remove();
     });
 
 

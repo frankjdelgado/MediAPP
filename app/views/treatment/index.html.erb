@@ -8,12 +8,10 @@
 			<% @treatments.each do |treatment| %>
 		    <li class='comp' data-id="<%= treatment.id%>">
 		        <div>
+		            <span class="icon-checkmark"></span>
 		            <h3 class="text-black"><strong><%= treatment.medication.name %></strong></h3>
-		            <p class="text-grey"><%= treatment.updated_at.strftime('%I:%m %p') %></p>
+		            <p class="text-grey">Last taken: <%= treatment.updated_at.strftime('%Y-%m-%d %I:%m %p') %></p>
 		        </div>
-		        <aside>
-		            <span class='nav'></span>
-		        </aside>
 		    </li>
 		    <%end%>
 		</ul>

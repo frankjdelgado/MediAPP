@@ -40,3 +40,15 @@ a.ui-input-clear{
 	}
 
 }
+
+#med-list{
+	.icon-checkmark{
+		color: $dark-grey !important;
+		font-size: 20px;
+		&:hover{
+			color: $green;
+		}
+		float:right;
+		text-decoration: none;
+	}
+}

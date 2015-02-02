@@ -20,7 +20,7 @@
 <%= yield %>
 
 
-<%if request.env['PATH_INFO'] != "/"%>
+<%if request.env['PATH_INFO'] != "/" && current_user%>
   <footer>
 
     <ul>
