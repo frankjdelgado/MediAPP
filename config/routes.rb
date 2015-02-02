@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   resources :medication do
 		collection do
 			get 'autocomplete'
-			get 'medications'
 		end 
 	end
-
+	get 'medications', to: 'medication#medications', as: 'medications'
+	
 	resources :treatment
 
 	get 'recover', to: 'account#recover', as: 'recover'

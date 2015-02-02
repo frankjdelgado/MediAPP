@@ -1,6 +1,7 @@
 class MedicationController < ApplicationController
 
 	before_action :detect_mobile, :validate_user
+  before_action :validate_admin, except: [:medications]
   # GET /medications
   # GET /medications.json
   def index

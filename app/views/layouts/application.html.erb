@@ -25,7 +25,11 @@
 
     <ul>
       <li>
+        <%if current_user.role == 0%>
+        <a href="/medications"><span class="icon-medical56"></span></a>
+        <%else%>
         <a href="/medication"><span class="icon-medical56"></span></a>
+        <%end%>
         <br>
         <span>Meds</span>
         </li>

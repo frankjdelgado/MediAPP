@@ -20,6 +20,12 @@ class ApplicationController < ActionController::Base
     redirect_to '/treatment' if current_user
   end
 
+  def validate_admin
+    if current_user.role == 0
+      redirect_to '/treatment'
+    end
+  end
+
   protected
 
   # --------Filters--------
