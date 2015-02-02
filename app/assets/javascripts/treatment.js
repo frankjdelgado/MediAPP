@@ -42,7 +42,6 @@ $(function() {
 	        value = $myText.val();
 
 	        if (data !== value && $( "#autocomplete-input").is(":focus")) {
-	            console.log(data+"-"+value);
 	            $myText.data("value", value);
 
 	            if ( value && value.length > 2 ) {
