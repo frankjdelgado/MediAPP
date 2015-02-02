@@ -36,6 +36,14 @@ end
 				)
 end
 
+Medication.create(:name => "Vicodion" , :description => "Powerfull painkiller")
+Medication.create(:name => "Acetaminofen" , :description => "Anti-Flu medicine")
+Medication.create(:name => "Malox" , :description => "Medicine for stomach-ache")
+Medication.create(:name => "Insuline" , :description => "Health supplement against diabetus")
+Medication.create(:name => "Cortisol" , :description => "Awesome does it all medicine")
+Medication.create(:name => "Peniciline" , :description => "Fungus based medicine against deseases")
+Medication.create(:name => "Festal" , :description => "Digestive")
+
 9.times do |i|
 	Unit.create(value: " #{i} capsulas")
 end

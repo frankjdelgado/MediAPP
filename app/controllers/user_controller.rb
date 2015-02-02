@@ -12,6 +12,8 @@ class UserController < ApplicationController
 		user = User.new(user_params)
 
 		if user.save
+			Medimailer.send_signup_email(user).deliver
+			redirect_to :root	
 			# medimailer.send_signup_email(@user).deliver
 			# flash[:notice] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, vitae?"
 			# redirect_to controller: :nombre_controller, action: :nombre_action
@@ -30,7 +32,7 @@ class UserController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:email, :password, :password_confirmation)
+		params.require(:user).permit(:email, :name, :password, :password_confirmation)
 	end
 
 end
