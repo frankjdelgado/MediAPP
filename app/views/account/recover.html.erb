@@ -1,0 +1,15 @@
+<nav class="current">
+	<h1>Recover Account</h1>
+</nav>
+<article id="recover" class="current">
+	<section>
+	<%=flash[:errors]%>
+	<br>
+		<%= form_tag({controller: "account", action: "password"}, method: "post") do %>
+			<%= email_field_tag 'email', nil, placeholder: "Email"  %>
+			<br/>
+			<br/>
+			<%= submit_tag "Update", class:"btn btn-green"%>
+		<% end %>
+	</section>
+</article>

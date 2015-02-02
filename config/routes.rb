@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
 	resources :treatment
 
+	get 'recover', to: 'account#recover', as: 'recover'
+	post 'password_reset', to: 'account#password', as: 'password_reset'
+
 end
