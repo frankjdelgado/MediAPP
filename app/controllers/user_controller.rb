@@ -13,12 +13,9 @@ class UserController < ApplicationController
 
 		if user.save
 			Medimailer.send_signup_email(user).deliver
-			redirect_to :root			
-			# flash[:notice] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, vitae?"
-			# redirect_to controller: :nombre_controller, action: :nombre_action
+			redirect_to root_path			
 		else
-			# flash[:warning] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, vitae?"
-			# redirect_to controller: :nombre_controller, action: :nombre_action
+			redirect_to root_path
 		end
 		
 	end
@@ -44,11 +41,6 @@ class UserController < ApplicationController
 		else
 			redirect_to controller: :user, action: :edit
 		end
-	end
-
-
-	def test
-		
 	end
 
 	private
