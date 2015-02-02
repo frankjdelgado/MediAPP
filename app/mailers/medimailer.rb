@@ -1,6 +1,7 @@
 class Medimailer < ActionMailer::Base
-  # default from: ENV["GMAIL_USERNAME"]
-  default from:"torreta.sendgrid.net"
+
+   # default from: ENV["GMAIL_USERNAME"]
+	 default from:"torreta.sendgrid.net"
 
   def pill_time_email (user,treatment)
   	@user = user
@@ -12,11 +13,9 @@ class Medimailer < ActionMailer::Base
 
   end
 
-  def send_signup_email (user)
-  	@user = user
-  	
-  	mail(to: @user.email, subject: "Thanks for signing up to our service")
-
-  end
+ def send_signup_email (user)
+	 @user = user
+	 mail(to: @user.email, subject: "Thanks for signing up to our service")
+ end
 
 end

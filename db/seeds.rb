@@ -66,6 +66,11 @@ Medication.create(:name => "Cortisol" , :description => "Awesome does it all med
 Medication.create(:name => "Peniciline" , :description => "Fungus based medicine against deseases")
 Medication.create(:name => "Festal" , :description => "Digestive")
 
+
+9.times do |i|
+	Unit.create(value: " #{i} capsulas")
+end
+
 # 9.times do |i|
 # 	Unit.create(value: " #{i} capsulas")
 # end
@@ -79,6 +84,7 @@ Medication.create(:name => "Festal" , :description => "Digestive")
 	Unit.create(value: "Miligrams")
 	Unit.create(value: "Teaspoon")
 	Unit.create(value: "Mililiters")
+
 
 9.times do |i|
 	User.create(name: "User #{i}" , email: "mail#{i}@gmail.com", password: "123456")

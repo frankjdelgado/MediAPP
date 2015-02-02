@@ -46,7 +46,6 @@ config.action_mailer.smtp_settings = {
   enable_starttls_auto: true,
   user_name: ENV["SENDGRID_USERNAME"],
   password: ENV["SENDGRID_PASSWORD"],
-
 }
 config.log_level = :debug
 
