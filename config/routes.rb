@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :medication do
 		collection do
 			get 'autocomplete'
+			get 'medications'
 		end 
 	end
 

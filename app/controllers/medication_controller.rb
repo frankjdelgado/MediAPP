@@ -73,6 +73,10 @@ class MedicationController < ApplicationController
     end
   end
 
+  def medications
+    @medications = Medication.all
+  end
+
 	private
     # Use callbacks to share common setup or constraints between actions.
 		def set_medication

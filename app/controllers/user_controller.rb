@@ -29,8 +29,6 @@ class UserController < ApplicationController
 
 	def update
 		@user = current_user
-		# @user.email = params[:email]
-		# @user.name = params[:name]
 		if @user.update(update_params)
 			redirect_to controller: :user, action: :edit
 		else
