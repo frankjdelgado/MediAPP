@@ -8,7 +8,7 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="msapplication-tap-highlight" content="no">
 
-  <title>MediApp - <%= @title%></title>
+  <title>MediApp | <%= @title%></title>
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag 'chui-ios-3.8.1.min', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -19,5 +19,33 @@
 <body>
 <%= yield %>
 
+
+<%if request.env['PATH_INFO'] != "/"%>
+  <footer>
+
+    <ul>
+      <li>
+        <a href="/medication"><span class="icon-medical56"></span></a>
+        <br>
+        <span>Meds</span>
+        </li>
+      <li>
+        <a href="/treatment"><span class="icon-home3"></span></a>
+        <br>
+        <span>Home</span>
+      </li>
+      <li>
+        <a href="/user/<%=session[:user_id]%>/edit"><span class="icon-user"></span></a>
+        <br>
+        <span>Profile</span>
+      </li>
+      <li>
+        <a href="/signout"><span class="icon-sign-out"></span></a>
+        <br>
+        <span>Sign out</span>
+      </li>
+    </ul>
+  </footer>
+<%end%>
 </body>
 </html>

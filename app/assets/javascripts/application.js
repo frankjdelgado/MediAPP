@@ -14,6 +14,7 @@
 //= require picker
 //= require picker.date
 //= require picker.time
+//= require main
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

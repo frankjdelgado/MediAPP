@@ -1,4 +1,5 @@
 class Medimailer < ActionMailer::Base
+
    # default from: ENV["GMAIL_USERNAME"]
 	 default from:"torreta.sendgrid.net"
 
@@ -6,8 +7,9 @@ class Medimailer < ActionMailer::Base
   	@user = user
   	@treatment = treatment
 
-  	#si no me equivoco, este puede ser un buen comienzo
-  	mail(to: @user.email, subject: " te toca tomarte #{(Medication.find_by_id(treatment.medication_id)).name}")
+  	#si no me equivoco, este puede ser un buen comienzo  Medication.find_by_id(Treatment.find_by_id(1).id).name
+
+  	mail(to: @user.email, subject: "Its time to take your medicine #{(Medication.find_by_id(treatment.medication_id)).name}")
 
   end
 
@@ -15,6 +17,5 @@ class Medimailer < ActionMailer::Base
 	 @user = user
 	 mail(to: @user.email, subject: "Thanks for signing up to our service")
  end
-
 
 end

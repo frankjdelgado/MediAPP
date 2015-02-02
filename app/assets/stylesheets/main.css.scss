@@ -58,6 +58,38 @@ h1 [class^="icon-"], h1 [class*=" icon-"] {
 	vertical-align: middle;
 }
 
+footer{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	background: #fff;
+	border-top: 1px solid $grey;
+	text-align:center;
+	ul{
+		padding:0;
+		margin:0;
+		li{
+			padding:5px 35px;
+			display:inline-block;
+			list-style:none;
+			a{
+				text-decoration:none;
+				&:hover{
+					text-decoration:none;
+				}
+				color: $green;
+				span{
+					color: $green;
+					font-size:30px;
+				}
+			}
+			span{
+				color: $dark-grey;
+			}
+		}
+	}
+}
 a.align-flush{
 	position: absolute;
 	right: 15px;

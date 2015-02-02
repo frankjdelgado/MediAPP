@@ -1,0 +1,18 @@
+<nav class="current">
+	<h1>Profile</h1>
+</nav>
+<article id="details" class="current">
+	<section>
+	<%=flash[:errors]%>
+	<br>
+		<%= form_tag({controller: "user", action: "update"}, method: "put") do %>
+			<%= text_field_tag 'name', @user.name, placeholder: "Name" %>
+			<%= email_field_tag 'email', @user.email, placeholder: "Email"  %>
+			<%= password_field_tag :password, nil, placeholder: "Password" %>
+			<%= password_field_tag :password_confirmation,nil, placeholder: "Password Confirmation" %>
+			<br/>
+			<br/>
+			<%= submit_tag "Update", class:"btn btn-green"%>
+		<% end %>
+	</section>
+</article>
