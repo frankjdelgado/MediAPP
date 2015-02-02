@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'signout', to: 'session#logout', as: :logout
   post 'signup', to: 'session#create'
 
-  resources :user
+  resources :user do
+		collection do
+			post 'password'
+		end 
+	end
   
   resources :medication do
 		collection do

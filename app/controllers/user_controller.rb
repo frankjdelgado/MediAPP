@@ -22,6 +22,31 @@ class UserController < ApplicationController
 		
 	end
 
+	def edit
+		@user = current_user
+	end
+
+	def update
+		@user = current_user
+		# @user.email = params[:email]
+		# @user.name = params[:name]
+		if @user.update(update_params)
+			redirect_to controller: :user, action: :edit
+		else
+			flash[:errors] = @user.errors.full_messages
+			redirect_to controller: :user, action: :edit
+		end
+	end
+
+	def password
+		@user = current_user
+		if @user.update(password_params)
+			redirect_to controller: :user, action: :edit
+		else
+			redirect_to controller: :user, action: :edit
+		end
+	end
+
 
 	def test
 		
@@ -31,6 +56,10 @@ class UserController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:email, :name, :password, :password_confirmation)
+	end
+
+	def update_params
+		params.permit(:email, :name, :password, :password_confirmation)
 	end
 
 end
