@@ -90,7 +90,6 @@ end
 	User.create(name: "User #{i}" , email: "mail#{i}@gmail.com", password: "123456")
 end
 
-	
 9.times do |i|
 	Treatment.create(
 					start: DateTime.now.to_date ,

@@ -3,8 +3,8 @@ class Medimailer < ActionMailer::Base
    # default from: ENV["GMAIL_USERNAME"]
 	 default from:"torreta.sendgrid.net"
 
-  def pill_time_email (user,treatment)
-  	@user = user
+  def pill_time_email (user_id,treatment)
+  	@user = User.find_by_id(user_id)
   	@treatment = treatment
 
   	#si no me equivoco, este puede ser un buen comienzo  Medication.find_by_id(Treatment.find_by_id(1).id).name
