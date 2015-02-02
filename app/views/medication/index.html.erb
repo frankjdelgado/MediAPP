@@ -1,0 +1,39 @@
+<nav class="current">
+	<h1>Meds</h1>
+	<button class='button align-flush' id='addMedication'><span class="text-green icon-plus"></span></button>
+</nav>
+ <article id="medication" class="current">
+	<section>
+		<ul class='list' id="medication-list">
+			<% @medications.each do |med| %>
+		    <li class='comp text-center' data-id="<%= med.id %>">
+		        <div>
+		            <h3 class="text-black"><strong><%= med.name %></strong></h3>
+		            <p class="text-grey"><%= med.description %></p>
+		        </div>
+		        <aside>
+		            <span class='nav'></span>
+		        </aside>
+		    </li>
+		    <%end%>
+		</ul>
+	</section>
+</article>
+
+<nav class="next">
+	<a class='button back text-green'>Cancel</a>
+	<h1>Add Medication</h1>
+</nav>
+<article id="newMedication" class="next">
+	<section>
+	<br>
+		<%= form_for :medication, url: {action: "create"}, html: { class: "ui-filterable text-center"} do |f| %>
+
+			<%= f.text_field :name, placeholder: "Name" %>
+			<%= f.text_field :description, placeholder: "Description" %>
+			<br/>
+			<br/>
+			<%= f.submit "Add Medication", class:"btn btn-green"%>
+		<% end %>
+	</section>
+</article>

@@ -1,0 +1,20 @@
+<nav class="current">
+	<h1>Meds</h1>
+</nav>
+ <article id="public-meds" class="current">
+	<section>
+		<ul class='list' id="medication-list">
+			<% @medications.each do |med| %>
+		    <li class='comp text-center' data-id="<%= med.id %>">
+		        <div>
+		            <h3 class="text-black"><strong><%= med.name %></strong></h3>
+		            <p class="text-grey"><%= med.description %></p>
+		        </div>
+		        <aside>
+		            <span class='nav'></span>
+		        </aside>
+		    </li>
+		    <%end%>
+		</ul>
+	</section>
+</article>

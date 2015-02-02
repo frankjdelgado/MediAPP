@@ -20,7 +20,7 @@ class SessionController < ApplicationController
 	      	session[:user_id] = user.id
 			redirect_to controller: :treatment, action: :index
 	    else
-	    	redirect_to :login
+	    	redirect_to root_path
 	    end
 	end
 

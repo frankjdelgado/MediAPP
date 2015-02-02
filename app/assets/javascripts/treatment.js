@@ -9,8 +9,9 @@ $(document).on( "singletap", "#med-list .delete", function() {
 
 $(function() {
 	$('#addButton').on('singletap', function() {
-	        $.UIGoToArticle('#newTreatment');
-	    });
+		console.log("adadasd");
+        $.UIGoToArticle('#newTreatment');
+    });
 
 
 	$('#med-list').UIEditList({
