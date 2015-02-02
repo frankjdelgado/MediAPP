@@ -8,7 +8,7 @@ class AccountController < ApplicationController
 		@new_password = SecureRandom.base64(6)
 		@user.password =  @new_password
 		if @user.save
-			# Send email with @new_password
+			Medimailer.recover_account_email(@user,@new_password).deliver
 		end
 		redirect_to root_path
 	end

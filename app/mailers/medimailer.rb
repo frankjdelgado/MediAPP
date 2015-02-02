@@ -13,9 +13,15 @@ class Medimailer < ActionMailer::Base
 
   end
 
- def send_signup_email (user)
-	 @user = user
-	 mail(to: @user.email, subject: "Thanks for signing up to our service")
- end
+  def send_signup_email (user)
+   @user = user
+   mail(to: @user.email, subject: "Thanks for signing up to our service")
+  end
+
+  def recover_acount_email (user, password)
+    @user = user
+    @password = password
+    mail(to: @user.email, subject: "Password Reset")
+  end
 
 end
